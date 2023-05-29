@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class JavaStarter {
+    public List<Map<String, Object>> data = new ArrayList<>();
     public JavaStarter() {
 
     }
@@ -19,7 +20,7 @@ public class JavaStarter {
             default -> System.out.println("Incorrect request");
         }
 
-        return new ArrayList<>();
+        return data;
     }
 
     private void insertValues(String request) {
@@ -37,10 +38,10 @@ public class JavaStarter {
 
             row.put(key, value);
 
-            System.out.println(row);
+            //System.out.println(row);
         }
 
-
+        data.add(row);
     }
 
     private void updateValues(String request) {
