@@ -31,12 +31,8 @@ public class JavaStarter {
         String[] requestArray = request.split(",");
 
         for (String letter: requestArray) {
-            StringBuilder value = new StringBuilder(letter.length());
-
             String key = letter.substring(0, letter.indexOf("="));
-            value.append(
-                    letter, letter.indexOf("=")+1, letter.indexOf(
-                            letter.charAt(letter.length()-1))+1);
+            String value = letter.substring(letter.indexOf("=")+1);
 
 
             row.put(key, value);
